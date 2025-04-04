@@ -10,9 +10,38 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .card-header.bg-primary {
+            background-color: #007bff;
+        }
+        .card-header.bg-success {
+            background-color: #28a745;
+        }
+        .btn-success {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+        .modal {
+            background-color: #ffffff;
+        }
+        .close-button {
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="HomeAdmin.html">Admin Panel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,7 +68,7 @@
         <!-- Formulario -->
         <div class="col-md-6">
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header text-white">
                     <h5 class="card-title mb-0">Crear usuarios</h5>
                 </div>
                 <div class="card-body">
@@ -54,16 +83,14 @@
                         </div>
                         <div class="mb-3">
                             <label for="email3" class="form-label">Tipo de usuario</label>
-
                         </div>
                         <div class="mb-3">
-                            <button type="button" class="btn btn-success btn-sm" id="basico">Usuario basico</button>
+                            <button type="button" class="btn btn-success btn-sm" id="basico">Usuario básico</button>
                             <button type="button" class="btn btn-warning btn-sm" id="admin">Usuario Administrador</button>
                         </div>
                        
 <div>
     <button type="submit" class="btn btn-primary w-100" id="Guardar">Guardar</button>
-
 </div>
                     </form>
                 </div>
@@ -73,7 +100,7 @@
         <!-- Tabla -->
         <div class="col-md-6">
             <div class="card shadow-sm">
-                <div class="card-header bg-success text-white">
+                <div class="card-header text-white">
                     <h5 class="card-title mb-0">Tabla de Datos</h5>
                 </div>
                 <div class="card-body">
@@ -85,11 +112,9 @@
                             <th scope="col">Contraseña</th>
                             <th scope="col">Tipo</th>
                             <th scope="col"> </th>
-
                         </tr>
                         </thead>
                         <tbody id="table">
-                       
                         </tbody>
                     </table>
                 </div>
@@ -101,7 +126,7 @@
 <div id="MymodalEditar" class="modal bg-light">
     <div class="row">
         <div class="col-md-4 offset-md-4 my-5 py-5">
-        <span class="close-button bg-danger" id="cerrar"> × </span>
+        <span class="close-button bg-danger text-white" id="cerrar"> × </span>
         <h2>Editar usuarios</h2>
         <form>
             <div class="mb-3">
@@ -114,16 +139,14 @@
             </div>
             <div class="mb-3">
                 <label for="email3" class="form-label">Tipo de usuario</label>
-
             </div>
             <div class="mb-3">
-                <button type="button" class="btn btn-success btn-sm" id="Abasico">Usuario basico</button>
+                <button type="button" class="btn btn-success btn-sm" id="Abasico">Usuario básico</button>
                 <button type="button" class="btn btn-warning btn-sm" id="Aadmin">Usuario Administrador</button>
             </div>
            
 <div>
 <button type="submit" class="btn btn-primary w-100" id="AGuardar">Guardar</button>
-
 </div>
         </form>
         </div>
