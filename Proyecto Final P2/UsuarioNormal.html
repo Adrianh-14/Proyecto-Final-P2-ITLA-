@@ -8,11 +8,42 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <title>Estacionamientos</title>
+    <style>
+        body {
+            background-color: #f0f2f5; /* Color de fondo suave */
+        }
+        .card {
+            border-radius: 15px; /* Bordes redondeados en las tarjetas */
+        }
+        .table {
+            background-color: #ffffff; /* Color de fondo de la tabla */
+        }
+        .table-dark th {
+            background-color: #343a40; /* Color de fondo de los encabezados de la tabla */
+            color: #ffffff; /* Color del texto de los encabezados */
+        }
+        .btn-outline-primary, .btn-outline-secondary, .btn-outline-success, .btn-outline-warning {
+            border-radius: 20px; /* Bordes redondeados en botones */
+        }
+        .modal {
+            border-radius: 15px; /* Bordes redondeados en el modal */
+        }
+        .close-button {
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+        .close-button:hover {
+            color: red; /* Cambia a rojo al pasar el mouse */
+        }
+    </style>
 </head>
 
 <body>
@@ -34,11 +65,10 @@
                                 <input type="text" class="form-control" id="matriculaInput" placeholder="Introduce la matrícula del vehículo">
                             </div>
 
-                            <div class="mb-4 d-flex justify-content-around" >
-                                
+                            <div class="mb-4 d-flex justify-content-around">
                                 <button type="button" class="btn btn-outline-primary" id="Carro">Carro</button>
                                 <button type="button" class="btn btn-outline-secondary" id="Jeepeta">Jeepeta</button>
-                                <button type="button" class="btn btn-outline-success"id="Camión" >Camión</button>
+                                <button type="button" class="btn btn-outline-success" id="Camión">Camión</button>
                                 <button type="button" class="btn btn-outline-warning" id="Motocicleta">Motocicleta</button>
                             </div>
 
@@ -61,7 +91,7 @@
                             <th>#</th>
                             <th>Matrícula</th>
                             <th>Tipo</th>
-                            <th>Codigo de retiro</th>
+                            <th>Código de Retiro</th>
                             <th>Fecha de Registro</th>
                             <th>Acciones</th>
                         </tr>
@@ -73,28 +103,29 @@
             </div>
         </div>
     </div>
+
     <div id="myModal" class="modal bg-light">
         <div class="row">
             <div class="col-md-4 offset-md-4 my-5 py-5">
-            <span class="close-button bg-danger" id="cerraro"> × </span>
-            <h2>Modificar Registro</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="ActualizarMAtricula" class="form-label">Matrícula</label>
-                    <input type="text" class="form-control" id="ActualizarMAtricula" placeholder="Introduce la matrícula del vehículo">
-                </div>
+                <span class="close-button bg-danger" id="cerraro"> × </span>
+                <h2>Modificar Registro</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="ActualizarMAtricula" class="form-label">Matrícula</label>
+                        <input type="text" class="form-control" id="ActualizarMAtricula" placeholder="Introduce la matrícula del vehículo">
+                    </div>
 
-                <div class="mb-4 d-flex justify-content-around">
-                    <button type="button" class="btn btn-outline-primary" id="ACarro">Carro</button>
-                    <button type="button" class="btn btn-outline-secondary" id="AJeepeta">Jeepeta</button>
-                    <button type="button" class="btn btn-outline-success"id="ACamión" >Camión</button>
-                    <button type="button" class="btn btn-outline-warning" id="AMotocicleta">Motocicleta</button>
-                </div>
+                    <div class="mb-4 d-flex justify-content-around">
+                        <button type="button" class="btn btn-outline-primary" id="ACarro">Carro</button>
+                        <button type="button" class="btn btn-outline-secondary" id="AJeepeta">Jeepeta</button>
+                        <button type="button" class="btn btn-outline-success" id="ACamión">Camión</button>
+                        <button type="button" class="btn btn-outline-warning" id="AMotocicleta">Motocicleta</button>
+                    </div>
 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary w-100" id="Actualizarbton">Registrar Vehículo</button>
-                </div>
-            </form>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-100" id="Actualizarbton">Registrar Vehículo</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -102,22 +133,24 @@
     <div id="MymodalSalida" class="modal bg-light">
         <div class="row">
             <div class="col-md-4 offset-md-4 my-5 py-5">
-            <span class="close-button bg-danger" id="cerrar"> × </span>
-            <h2>Dar salida</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="salidaID" class="form-label">Codigo de salida</label>
-                    <input type="text" class="form-control" id="salidaID" placeholder="Introduce el codigo de salida">
-                </div>
+                <span class="close-button bg-danger" id="cerrar"> × </span>
+                <h2>Dar Salida</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="salidaID" class="form-label">Código de Salida</label>
+                        <input type="text" class="form-control" id="salidaID" placeholder="Introduce el código de salida">
+                    </div>
 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-danger w-100" id="Salirbton">salir</button>
-                </div>
-            </form>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger w-100" id="Salirbton">Salir</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
     <script src="UsuariosNormales.js"></script>
 </body>
 
 </html>
+
